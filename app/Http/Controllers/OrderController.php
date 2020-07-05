@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use App\Product;
 
 class OrderController extends Controller
 {
@@ -32,8 +33,17 @@ class OrderController extends Controller
         }else{
             return redirect()->back();
         }
+    }
 
-        
-        
+    public function add(Product $product) {
+        $quantity = 1;
+        $order = new Order;
+        $order->user_id = auth()->user()->id;
+        $order->product_id = $product->id;
+        $order->quantity = $quantity;
+        $order->total = $product->price * $quantity;
+        $order->save();
+        return redirect()->back();
+
     }
 }

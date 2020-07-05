@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{asset('custom/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('custom/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('custom/css/style.css')}}">
+    <livewire:styles>
   </head>
   <body>
     @include('shop.include.nav')
@@ -120,6 +121,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="{{asset('custom/js/google-map.js')}}"></script>
   <script src="{{asset('custom/js/main.js')}}"></script>
-    
+  <livewire:scripts>
   </body>
 </html>

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'WebsiteController@index');
+Route::redirect('/', 'home');
 Route::get('/home', 'WebsiteController@index')->name('home');
 Route::get('/product-detail/{id}', 'WebsiteController@productDetail')->name('product-detail');
 Route::get('/products', 'WebsiteController@product')->name('products');
@@ -26,3 +26,9 @@ Route::get('/cart', 'WebsiteController@cart')->name('cart')->middleware('auth');
 Route::delete('/order/{id}', 'OrderController@destroy')->name('order.destroy');
 Route::post('/order', 'OrderController@store')->name('order.store')->middleware('auth');
 Route::post('/order/single', 'OrderController@store')->name('order.store.single')->middleware('auth');
+Route::get('/cart/{product}', 'OrderController@add')->name('cart.add')->middleware('auth');
+
+Route::redirect('/admin', 'admin/home');
+Route::get('/admin/home', 'AdminController@index')->name('admin.home');
+
+Route::resource('admin/products', 'ProductController');

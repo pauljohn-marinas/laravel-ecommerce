@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class WebsiteController extends Controller
 {
     public function index() {
-        $products = Product::paginate(4);
+        $products = Product::take(4)->get();
         return view('shop.index', compact('products'));
     }
 

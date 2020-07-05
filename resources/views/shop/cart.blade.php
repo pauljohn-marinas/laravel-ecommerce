@@ -34,7 +34,7 @@
 									<form action="{{route('order.destroy', $order->id)}}" method="post">
 										@csrf
 										@method('delete')
-										<button style="cursor:pointer; font-size:20px; background-color:#fff !important; border:0 !important;" type="submit">X</button>
+										<button style="cursor:pointer; font-size:20px; background-color:#fff !important; border:0 !important; outline:none;" type="submit">X</button>
 									</form>
 
 								</td>

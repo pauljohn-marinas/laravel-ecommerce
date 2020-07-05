@@ -10,8 +10,7 @@
         <li class="nav-item active"><a href="{{route('home')}}" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="{{route('products')}}" class="nav-link">Shop</a></li>
         <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
-        <li class="nav-item cta cta-colored"><a href="{{route('cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>[{{Auth::user()->orders->count()}}]</a></li>
-
+        <li class="nav-item cta cta-colored"><a href="{{route('cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>[{{Auth::check() ? auth()->user()->orders->count() : '0'}}]</a></li>
         </ul>
         <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
